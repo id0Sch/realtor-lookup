@@ -7,6 +7,9 @@ document.getElementById("form")
     const f = new FormData(e.target)
     const val = f.get('a')
 
+    window.ga('set', 'term', val);
+    window.ga('search')
+
     const list = document.getElementById('list')
     list.innerHTML = ''
 

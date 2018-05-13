@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
 })
+
 document.getElementById("form")
   .addEventListener('submit', (e) => {
     e.preventDefault()
@@ -7,8 +8,7 @@ document.getElementById("form")
     const f = new FormData(e.target)
     const val = f.get('a')
 
-    gtag('set', 'term', val);
-    gtag('search')
+    gtag('event', 'search', { search_term: val })
 
     const list = document.getElementById('list')
     list.innerHTML = ''
